@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="requestAnimationFrame.js"></script>
+</head>
+<body>
+    <button id="cancel">停止</button>
+    <script>
+            var id;
+            requesetAnimationFrameTest();
+            document.querySelector("#cancel").addEventListener("click",function(){
+               window.cancelAnimationFrame(id);
+            });
+            function requesetAnimationFrameTest(){
+                id=window.requestAnimationFrame(function(){
+                    console.log(arguments);
+                    requesetAnimationFrameTest();
+                });
+            }
+
+    </script>
+</body>
+</html>
